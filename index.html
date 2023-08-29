@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Page</title>
+</head>
+<body>
+  <h1>Enter Password</h1>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">Submit</button>
+  <p id="message"></p>
+
+  <div id="privateInfo" style="display: none;">
+    <h2>Private Information</h2>
+    <textarea rows="5" cols="50">This is some private information that you can see after entering the correct password.</textarea>
+  </div>
+
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      if (password === "153") {
+        document.getElementById("message").textContent = "Password correct!";
+        document.getElementById("privateInfo").style.display = "block";
+      } else {
+        document.getElementById("message").textContent = "Incorrect password. Try again.";
+        document.getElementById("privateInfo").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
